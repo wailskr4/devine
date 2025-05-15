@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jeu de devinettes amusant avec différents niveaux de difficulté">
+  <title>Devinettes Mystères | Jeu de réflexion</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1 class="title">Devinettes Mystères</h1>
+    <div class="theme-switch">
+      <button id="theme-toggle" aria-label="Changer le thème">
+        <span class="icon">🌓</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="game-container">
+    <div class="game-header">
+      <div class="stats">
+        <div class="stat-box">
+          <span class="stat-label">Score</span>
+           <span class="stat-value" id="score-value">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Progression</span>
+          <span id="progress-text" class="stat-value">1/17</span>
+        </div>
+      </div>
+
+      <div class="progress-container" aria-label="Progression du jeu">
+        <div id="progress-bar" class="progress-bar" role="progressbar"></div>
+      </div>
+    </div>
+
+    <section class="game-content" aria-live="polite">
+      <div class="riddle-card">
+        <p id="riddle" class="riddle-text">Chargement de la devinette...</p>
+        <div id="options" class="options-grid" role="group"></div>
+      </div>
+
+      <div id="feedback" class="feedback-message" aria-live="assertive"></div>
+<div id="final-score" class="final-score"></div>
+<p id="final-message" class="final-message"></p>
+
+    </section>
+
+    <div class="game-controls">
+      <button id="next" class="btn btn-primary" disabled>
+        Suivante <span class="icon">→</span>
+      </button>
+      <button id="hint" class="btn btn-secondary">
+        Indice <span class="icon">💡</span>
+      </button>
+      <button id="restart" class="btn btn-secondary hidden">
+        <span class="icon">🔄</span> Rejouer
+      </button>
+    </div>
+
+    <div id="score" class="result-modal hidden" role="dialog" aria-modal="true">
+      <div class="modal-content">
+        <h2>Résultats finaux</h2>
+        <div id="final-score" class="final-score"></div>
+        <p id="final-message" class="final-message"></p>
+        <div class="modal-actions">
+          <button id="share-btn" class="btn btn-share">
+            <span class="icon">📤</span> Partager
+          </button>
+          <button id="restart-modal" class="btn btn-primary">
+            <span class="icon">🔄</span> Nouvelle partie
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Devinettes Mystères - Un jeu créé avec ❤️ pour ma femme nesrine</p>
+  </footer>
+
+  <script src="script.js" async></script>
+</body>
+</html>
