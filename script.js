@@ -1,94 +1,102 @@
 const devinettes = [
+
   {
-    question: "Je suis de couleur rouge, j’attire les yeux et le désir, celui qui me mange réclame ma saveur.",
-    options: ["Pomme", "Pastèque", "Fruit de bois", "Foie"],
+    question: "Je suis l’organe qui abrite le bébé pendant neuf mois. Je suis…",
+    options: ["L’utérus", "Le vagin", "Les ovaires", "La vessie"],
+    reponse: "L’utérus"
+  },
+  {
+    question: "Je transporte les spermatozoïdes et fais partie du système masculin. On m'appelle…",
+    options: ["La prostate", "L’urètre", "Le testicule", "Le canal déférent"],
+    reponse: "Le canal déférent"
+  },
+  {
+    question: "Quel organe masculin produit les spermatozoïdes ?",
+    options: ["La prostate", "Le canal déférent", "Le testicule", "L’urètre"],
+    reponse: "Le testicule"
+  },
+  {
+    question: "Quel organe contrôle de nombreuses fonctions en envoyant des hormones dans le sang ?",
+    options: ["La moelle osseuse", "Le pancréas", "La thyroïde", "Le cœur"],
+    reponse: "La thyroïde"
+  },
+	 {
+    question: "Quel fruit est rouge, croquant, et souvent associé à la tentation ?",
+    options: ["Pomme", "Cerise", "Fraise", "Pastèque"],
     reponse: "Pomme"
   },
   {
-    question: "Je suis verte à l’extérieur et rouge à l’intérieur, on me mange en été pour me rafraîchir.",
-    options: ["Kiwi", "Pastèque", "Fraise", "Concombre"],
+    question: "Quel légume orange est riche en bêta-carotène et bon pour les yeux ?",
+    options: ["Carotte", "Tomate", "Poivron", "Courge"],
+    reponse: "Carotte"
+  },
+  {
+    question: "Quel fruit jaune est connu pour sa richesse en potassium ?",
+    options: ["Banane", "Mangue", "Citron", "Pêche"],
+    reponse: "Banane"
+  },
+  {
+    question: "Quel légume vert a des feuilles que l’on mange souvent en salade ?",
+    options: ["Chou", "Épinard", "Laitue", "Brocoli"],
+    reponse: "Laitue"
+  },
+  {
+    question: "Quel fruit est vert à l’extérieur, rouge à l’intérieur, et plein de pépins noirs ?",
+    options: ["Pomme", "Melon", "Pastèque", "Kiwi"],
     reponse: "Pastèque"
   },
-  {
-    question: "Je suis une glande en forme de papillon, située dans le cou, et je contrôle le métabolisme. Qui suis-je ?",
-    options: ["Le pancréas", "La thyroïde", "L'hypophyse", "Les surrénales"],
-    reponse: "La thyroïde"
-  },
-  {
-    question: "Je suis la plus grande artère du corps humain, chargée de transporter le sang oxygéné. Qui suis-je ?",
-    options: ["La veine cave", "L'artère pulmonaire", "L'aorte", "L'artère coronaire"],
-    reponse: "L'aorte"
-  },
-
-  // Questions sur les pays
-  {
-    question: "Je suis un pays connu pour mes pyramides, le Nil et mes pharaons. Qui suis-je ?",
-    options: ["Le Maroc", "L'Égypte", "La Grèce", "Le Mexique"],
-    reponse: "L'Égypte"
-  },
-  {
-    question: "Je suis le plus grand pays du monde en superficie, situé en partie en Europe et en Asie. Qui suis-je ?",
-    options: ["La Chine", "Les États-Unis", "Le Canada", "La Russie"],
-    reponse: "La Russie"
-  },
-  {
-    question: "Je suis Toujours avec toi et je disparai a la nuit",
-    options: ["soleil", "ombre", "clé", "etoile"],
-    reponse: "ombre"
-  },
-  {
-    question: "Je suis petit et souvent rouge ou noir, je pousse dans les bois et suis très sucré.",
-    options: ["Raisin", "Mûre", "Fruit de bois", "Cerise"],
-    reponse: "Fruit de bois"
-  },
-  {
-    question: "Je roule sur des rails, je peux être très rapide, je relie les villes et parfois les pays.",
-    options: ["Avion", "Bus", "Train", "Voiture"],
-    reponse: "Train"
-  },
-  {
-    question: "Je vole dans le ciel, je transporte les gens très loin, parfois à travers des continents.",
-    options: ["Hélicoptère", "Avion", "Montgolfière", "Fusée"],
+	 {
+    question: "Quel moyen de transport vole dans le ciel et relie rapidement deux pays éloignés ?",
+    options: ["Voiture", "Train", "Avion", "Bateau"],
     reponse: "Avion"
   },
   {
-    question: "On me tire pour voyager, j’ai des roues, je porte tes valises.",
-    options: ["Chariot", "Trolley", "Valise à roulettes", "Sac à dos"],
-    reponse: "Valise à roulettes"
+    question: "Quel document est obligatoire pour voyager à l’étranger ?",
+    options: ["Carte bancaire", "Permis de conduire", "Passeport", "Carte de bibliothèque"],
+    reponse: "Passeport"
   },
   {
-    question: "Je donne l'heure, je suis souvent au poignet, parfois connecté.",
-    options: ["Téléphone", "Réveil", "Horloge", "Montre"],
-    reponse: "Montre"
+    question: "Comment s’appelle le lieu où l’on dort lorsqu’on est en vacances et que l’on paie pour une chambre ?",
+    options: ["Gare", "Restaurant", "Hôtel", "Musée"],
+    reponse: "Hôtel"
   },
   {
-    question: "Je suis utile en cas de pluie, je m'ouvre en rond au-dessus de ta tête.",
-    options: ["Cape", "Parapluie", "Chapeau", "Bâche"],
-    reponse: "Parapluie"
+    question: "Quel moyen de transport roule sur des rails et relie souvent les grandes villes ?",
+    options: ["Bus", "Train", "Taxi", "Camion"],
+    reponse: "Train"
+  },
+	 {
+    question: "Quel sandwich chaud contient souvent du steak, du fromage, de la salade et est servi dans un pain rond ?",
+    options: ["Tacos", "Kebab", "Burger", "Panini"],
+    reponse: "Burger"
   },
   {
-    question: "Je flotte sur l'eau, je transporte des gens ou des marchandises sur les mers.",
-    options: ["Bateau", "Canot", "Sous-marin", "Jet-ski"],
-    reponse: "Bateau"
+    question: "Quel accompagnement croustillant est souvent servi avec un hamburger ?",
+    options: ["Chips", "Riz", "Frites", "Légumes"],
+    reponse: "Frites"
   },
   {
-    question: "Je suis adorable, gentille, aimable et mon homme m'adore.",
-    options: ["Nesrine", "Chocolat", "Macaron", "Pizza"],
+    question: "Quelle boisson gazeuse sucrée est très populaire dans les fast-foods ?",
+    options: ["Eau", "Jus d’orange", "Limonade", "Coca-Cola"],
+    reponse: "Coca-Cola"
+  },
+	 {
+    question: "Quel dessert glacé est souvent proposé en fin de repas dans un fast-food ?",
+    options: ["Gâteau", "Crème glacée", "Crêpe", "Pudding"],
+    reponse: "Crème glacée"
+  },
+	  {
+    question: "Elle vient de Tlemcen, aime les mêmes choses que moi, et partage ma vie chaque jour. Qui est-ce ?",
+    options: ["Ma cousine", "Ma sœur", "mon épouse", "Ma voisine"],
+    reponse: "mon épouse"
+  },
+  {
+    question: "Elle aime ce que j’aime, comprend mes silences, et rend mes projets plus beaux. De qui s’agit-il ?",
+    options: ["Une amie", "Ma mère", "Ma collègue", "Nesrine"],
     reponse: "Nesrine"
-  },
-
-
-  {
-    question: "Je capte les sons, je suis dans tes oreilles pour écouter la musique.",
-    options: ["Enceinte", "Casque", "Télécommande", "Micro"],
-    reponse: "Casque"
-  },
-  {
-    question: "Je suis une spécialité culinaire typique de Tlemcen, une pâtisserie fine au miel et aux amandes. Qui suis-je ?",
-    options: ["La Baklawa", "La Chrik", "La Zlabia", "Les Makroud"],
-    reponse: "La Chrik"
   }
 ];
+
 
 let index = 0;
 let score = 0;
