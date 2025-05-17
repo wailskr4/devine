@@ -173,10 +173,10 @@ function afficherResultatFinal() {
   elements.progressBar.style.width = "100%";
 
   let messageFinal = "";
-  if (score >= 13) {
-    messageFinal = "Bravo 7abibti tu a fais un super travail ^^";
-  } else if (score >=8) {
-    messageFinal = "Pas mal bébé tu peux faire mieux";
+  if (score >= 14) {
+    messageFinal = "Ma femme est une intellecte machallah";
+  } else if (score >=9) {
+    messageFinal = "Pas mal bébé chaatra t3 papaha";
   } else {
     messageFinal = "encore un effort zine jss tu peux faire mieux";
   }
