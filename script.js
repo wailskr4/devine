@@ -87,12 +87,12 @@ const devinettes = [
   },
 	  {
     question: "Elle vient de Tlemcen, aime les mêmes choses que moi, et partage ma vie chaque jour. Qui est-ce ?",
-    options: ["Ma cousine", "Ma sœur", "mon épouse", "Ma voisine"],
+    options: ["Ma cousine", "Ma sœur", "mon épouse", "ma tente"],
     reponse: "mon épouse"
   },
   {
-    question: "Elle aime ce que j’aime, comprend mes silences, et rend mes projets plus beaux. De qui s’agit-il ?",
-    options: ["Une amie", "Ma mère", "Ma collègue", "Nesrine"],
+    question: "Elle aime ce que j’aime, comprend mes silences, et rend mes jours plus beaux. De qui s’agit-il ?",
+    options: ["cousine", "mon amie", "Ma collègue", "Nesrine"],
     reponse: "Nesrine"
   }
 ];
