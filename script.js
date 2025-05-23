@@ -1,101 +1,109 @@
 const devinettes = [
+  // Tlemcen & Constantine (Algérie)
+  {
+    question: "Je suis une ville algérienne connue pour ses palais andalous et la mosquée Sidi Boumediene. Je suis…",
+    options: ["Oran", "Tlemcen", "Annaba", "Béjaïa"],
+    reponse: "Tlemcen"
+  },
+  {
+    question: "On m’appelle la ville des ponts suspendus. Je suis perchée sur des falaises. Qui suis-je ?",
+    options: ["Tizi Ouzou", "Alger", "Constantine", "Sétif"],
+    reponse: "Constantine"
+  },
+  {
+    question: "Je suis une spécialité culinaire sucrée typique de Tlemcen à base d’amandes et de miel. Je suis…",
+    options: ["Makroud", "Kalb el louz", "Zlabia", "Griouech"],
+    reponse: "Griouech"
+  },
+  {
+    question: "Ce pont emblématique de Constantine est suspendu à plus de 100 mètres de hauteur. Il s'appelle…",
+    options: ["Pont de Sidi M’Cid", "Pont de l’unité africaine", "Pont des Martyrs", "Pont El-Kantara"],
+    reponse: "Pont de Sidi M’Cid"
+  },
+  {
+    question: "À Tlemcen, ce parc naturel est célèbre pour ses grottes et cascades. Il s'agit du parc de…",
+    options: ["Chréa", "Tassili", "Tlemcen", "Gouraya"],
+    reponse: "Tlemcen"
+  },
 
+  // Thèmes de voyage (monde)
   {
-    question: "Je suis l’organe qui abrite le bébé pendant neuf mois. Je suis…",
-    options: ["L’utérus", "Le vagin", "Les ovaires", "La vessie"],
-    reponse: "L’utérus"
-  },
-  {
-    question: "Je transporte les spermatozoïdes et fais partie du système masculin. On m'appelle…",
-    options: ["La prostate", "L’urètre", "Le testicule", "Le canal déférent"],
-    reponse: "Le canal déférent"
+    question: "Quel monument emblématique trouve-t-on à Paris ?",
+    options: ["Big Ben", "Taj Mahal", "Tour Eiffel", "Statue de la Liberté"],
+    reponse: "Tour Eiffel"
   },
   {
-    question: "Quel organe masculin produit les spermatozoïdes ?",
-    options: ["La prostate", "Le canal déférent", "Le testicule", "L’urètre"],
-    reponse: "Le testicule"
+    question: "Dans quel pays peut-on visiter les pyramides de Gizeh ?",
+    options: ["Maroc", "Grèce", "Égypte", "Turquie"],
+    reponse: "Égypte"
   },
   {
-    question: "Quel organe contrôle de nombreuses fonctions en envoyant des hormones dans le sang ?",
-    options: ["La moelle osseuse", "Le pancréas", "La thyroïde", "Le cœur"],
-    reponse: "La thyroïde"
-  },
-	 {
-    question: "Quel fruit est rouge, croquant, et souvent associé à la tentation ?",
-    options: ["Pomme", "Cerise", "Fraise", "Pastèque"],
-    reponse: "Pomme"
+    question: "Quel pays est célèbre pour ses cerisiers en fleurs et ses temples zen ?",
+    options: ["Chine", "Corée", "Japon", "Thaïlande"],
+    reponse: "Japon"
   },
   {
-    question: "Quel légume orange est riche en bêta-carotène et bon pour les yeux ?",
-    options: ["Carotte", "Tomate", "Poivron", "Courge"],
-    reponse: "Carotte"
+    question: "Quelle île tropicale est célèbre pour ses plages et son volcan actif, le Piton de la Fournaise ?",
+    options: ["Madagascar", "Réunion", "Tahiti", "Maldives"],
+    reponse: "Réunion"
   },
   {
-    question: "Quel fruit jaune est connu pour sa richesse en potassium ?",
-    options: ["Banane", "Mangue", "Citron", "Pêche"],
-    reponse: "Banane"
+    question: "Dans quelle ville italienne peut-on faire un tour en gondole sur les canaux ?",
+    options: ["Rome", "Milan", "Venise", "Naples"],
+    reponse: "Venise"
   },
   {
-    question: "Quel légume vert a des feuilles que l’on mange souvent en salade ?",
-    options: ["Chou", "Épinard", "Laitue", "Brocoli"],
-    reponse: "Laitue"
+    question: "Quel pays est surnommé le pays des mille collines ?",
+    options: ["Burundi", "Rwanda", "Éthiopie", "Kenya"],
+    reponse: "Rwanda"
   },
   {
-    question: "Quel fruit est vert à l’extérieur, rouge à l’intérieur, et plein de pépins noirs ?",
-    options: ["Pomme", "Melon", "Pastèque", "Kiwi"],
-    reponse: "Pastèque"
-  },
-	 {
-    question: "Quel moyen de transport vole dans le ciel et relie rapidement deux pays éloignés ?",
-    options: ["Voiture", "Train", "Avion", "Bateau"],
-    reponse: "Avion"
+    question: "Quel pays d’Amérique du Sud est connu pour le Machu Picchu ?",
+    options: ["Brésil", "Argentine", "Pérou", "Chili"],
+    reponse: "Pérou"
   },
   {
-    question: "Quel document est obligatoire pour voyager à l’étranger ?",
-    options: ["Carte bancaire", "Permis de conduire", "Passeport", "Carte de bibliothèque"],
-    reponse: "Passeport"
+    question: "Quel désert célèbre se trouve en Afrique et est le plus vaste du monde ?",
+    options: ["Kalahari", "Atacama", "Gobi", "Sahara"],
+    reponse: "Sahara"
   },
   {
-    question: "Comment s’appelle le lieu où l’on dort lorsqu’on est en vacances et que l’on paie pour une chambre ?",
-    options: ["Gare", "Restaurant", "Hôtel", "Musée"],
-    reponse: "Hôtel"
+    question: "Quel pays est reconnu pour ses fjords et ses aurores boréales ?",
+    options: ["Finlande", "Islande", "Suède", "Norvège"],
+    reponse: "Norvège"
   },
   {
-    question: "Quel moyen de transport roule sur des rails et relie souvent les grandes villes ?",
-    options: ["Bus", "Train", "Taxi", "Camion"],
-    reponse: "Train"
-  },
-	 {
-    question: "Quel sandwich chaud contient souvent du steak, du fromage, de la salade et est servi dans un pain rond ?",
-    options: ["Tacos", "Kebab", "Burger", "Panini"],
-    reponse: "Burger"
+    question: "Dans quel pays trouve-t-on le Taj Mahal ?",
+    options: ["Pakistan", "Inde", "Bangladesh", "Iran"],
+    reponse: "Inde"
   },
   {
-    question: "Quel accompagnement croustillant est souvent servi avec un hamburger ?",
-    options: ["Chips", "Riz", "Frites", "Légumes"],
-    reponse: "Frites"
+    question: "Quel pays est connu pour ses kangourous et ses koalas ?",
+    options: ["Australie", "Nouvelle-Zélande", "Afrique du Sud", "Brésil"],
+    reponse: "Australie"
   },
   {
-    question: "Quelle boisson gazeuse sucrée est très populaire dans les fast-foods ?",
-    options: ["Eau", "Jus d’orange", "Limonade", "Coca-Cola"],
-    reponse: "Coca-Cola"
-  },
-	 {
-    question: "Quel dessert glacé est souvent proposé en fin de repas dans un fast-food ?",
-    options: ["Gâteau", "Crème glacée", "Crêpe", "Pudding"],
-    reponse: "Crème glacée"
-  },
-	  {
-    question: "Elle vient de Tlemcen, aime les mêmes choses que moi, et partage ma vie chaque jour. Qui est-ce ?",
-    options: ["Ma cousine", "Ma sœur", "mon épouse", "ma tente"],
-    reponse: "mon épouse"
+    question: "Quel est le plus grand pays du monde en superficie ?",
+    options: ["Chine", "États-Unis", "Russie", "Canada"],
+    reponse: "Russie"
   },
   {
-    question: "Elle aime ce que j’aime, comprend mes silences, et rend mes jours plus beaux. De qui s’agit-il ?",
-    options: ["cousine", "mon amie", "Ma collègue", "Nesrine"],
-    reponse: "Nesrine"
+    question: "Dans quel pays trouve-t-on la ville de Marrakech ?",
+    options: ["Tunisie", "Égypte", "Algérie", "Maroc"],
+    reponse: "Maroc"
+  },
+  {
+    question: "Quel pays est célèbre pour ses tulipes et ses moulins à vent ?",
+    options: ["Belgique", "Pays-Bas", "Suisse", "Allemagne"],
+    reponse: "Pays-Bas"
+  },
+  {
+    question: "Quel archipel est réputé pour ses plages paradisiaques et se situe dans l'océan Indien ?",
+    options: ["Cap-Vert", "Seychelles", "Canaries", "Philippines"],
+    reponse: "Seychelles"
   }
 ];
+
 
 
 let index = 0;
