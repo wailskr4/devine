@@ -102,7 +102,7 @@ const devinettes = [
 	  {
     question: "Je suis ca personne préféré , sont bonheur et sont Avenir sont moi la vie de wail est vide",
     options: ["Nesrine", "l'internet", "sa famille", "une voiture"],
-    reponse: "Le mtewem"
+    reponse: "Nesrine"
   }
 	
 ];
