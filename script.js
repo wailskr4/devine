@@ -1,3 +1,22 @@
+
+const themeChanger = document.getElementById("theme-toggle");
+themeChanger.addEventListener("click", function() {
+  const html = document.documentElement;
+  const currentTheme = html.getAttribute("data-theme");
+  const newTheme = currentTheme === "light" ? "dark" : "light";
+  
+  html.setAttribute("data-theme", newTheme);
+  
+  // Optional: Save the theme preference to localStorage
+  localStorage.setItem("theme", newTheme);
+});
+
+// Optional: Check for saved theme preference on page load
+document.addEventListener("DOMContentLoaded", function() {
+  const savedTheme = localStorage.getItem("theme") || "light";
+  document.documentElement.setAttribute("data-theme", savedTheme);
+});
+
 const devinettes = [
   // 5 devinettes sur les pays
   {
