@@ -1,110 +1,111 @@
 const devinettes = [
-  // Tlemcen & Constantine (Algérie)
+  // 5 devinettes sur les pays
   {
-    question: "Je suis une ville algérienne connue pour ses palais andalous et la mosquée Sidi Boumediene. Je suis…",
-    options: ["Oran", "Tlemcen", "Annaba", "Béjaïa"],
-    reponse: "Tlemcen"
-  },
-  {
-    question: "On m’appelle la ville des ponts suspendus. Je suis perchée sur des falaises. Qui suis-je ?",
-    options: ["Tizi Ouzou", "Alger", "Constantine", "Sétif"],
-    reponse: "Constantine"
-  },
-  {
-    question: "Je suis une spécialité culinaire sucrée typique de Tlemcen à base d’amandes et de miel. Je suis…",
-    options: ["Makroud", "Kalb el louz", "Zlabia", "Griouech"],
-    reponse: "Griouech"
-  },
-  {
-    question: "Ce pont emblématique de Constantine est suspendu à plus de 100 mètres de hauteur. Il s'appelle…",
-    options: ["Pont de Sidi M’Cid", "Pont de l’unité africaine", "Pont des Martyrs", "Pont El-Kantara"],
-    reponse: "Pont de Sidi M’Cid"
-  },
-  {
-    question: "À Tlemcen, ce parc naturel est célèbre pour ses grottes et cascades. Il s'agit du parc de…",
-    options: ["Chréa", "Tassili", "Tlemcen", "Gouraya"],
-    reponse: "Tlemcen"
-  },
-
-  // Thèmes de voyage (monde)
-  {
-    question: "Quel monument emblématique trouve-t-on à Paris ?",
-    options: ["Big Ben", "Taj Mahal", "Tour Eiffel", "Statue de la Liberté"],
-    reponse: "Tour Eiffel"
-  },
-  {
-    question: "Dans quel pays peut-on visiter les pyramides de Gizeh ?",
-    options: ["Maroc", "Grèce", "Égypte", "Turquie"],
-    reponse: "Égypte"
-  },
-  {
-    question: "Quel pays est célèbre pour ses cerisiers en fleurs et ses temples zen ?",
-    options: ["Chine", "Corée", "Japon", "Thaïlande"],
+    question: "Quel pays est surnommé le pays du Soleil-Levant ?",
+    options: ["Chine", "Corée du Sud", "Japon", "Vietnam"],
     reponse: "Japon"
   },
   {
-    question: "Quelle île tropicale est célèbre pour ses plages et son volcan actif, le Piton de la Fournaise ?",
-    options: ["Madagascar", "Réunion", "Tahiti", "Maldives"],
-    reponse: "Réunion"
-  },
-  {
-    question: "Dans quelle ville italienne peut-on faire un tour en gondole sur les canaux ?",
-    options: ["Rome", "Milan", "Venise", "Naples"],
-    reponse: "Venise"
-  },
-  {
-    question: "Quel pays est surnommé le pays des mille collines ?",
-    options: ["Burundi", "Rwanda", "Éthiopie", "Kenya"],
-    reponse: "Rwanda"
-  },
-  {
-    question: "Quel pays d’Amérique du Sud est connu pour le Machu Picchu ?",
-    options: ["Brésil", "Argentine", "Pérou", "Chili"],
-    reponse: "Pérou"
-  },
-  {
-    question: "Quel désert célèbre se trouve en Afrique et est le plus vaste du monde ?",
-    options: ["Kalahari", "Atacama", "Gobi", "Sahara"],
-    reponse: "Sahara"
-  },
-  {
-    question: "Quel pays est reconnu pour ses fjords et ses aurores boréales ?",
-    options: ["Finlande", "Islande", "Suède", "Norvège"],
-    reponse: "Norvège"
-  },
-  {
-    question: "Dans quel pays trouve-t-on le Taj Mahal ?",
-    options: ["Pakistan", "Inde", "Bangladesh", "Iran"],
-    reponse: "Inde"
-  },
-  {
-    question: "Quel pays est connu pour ses kangourous et ses koalas ?",
-    options: ["Australie", "Nouvelle-Zélande", "Afrique du Sud", "Brésil"],
-    reponse: "Australie"
-  },
-  {
-    question: "Quel est le plus grand pays du monde en superficie ?",
-    options: ["Chine", "États-Unis", "Russie", "Canada"],
-    reponse: "Russie"
-  },
-  {
-    question: "Dans quel pays trouve-t-on la ville de Marrakech ?",
-    options: ["Tunisie", "Égypte", "Algérie", "Maroc"],
+    question: "Dans quel pays se trouve la ville de Marrakech ?",
+    options: ["Algérie", "Tunisie", "Maroc", "Égypte"],
     reponse: "Maroc"
   },
   {
-    question: "Quel pays est célèbre pour ses tulipes et ses moulins à vent ?",
-    options: ["Belgique", "Pays-Bas", "Suisse", "Allemagne"],
-    reponse: "Pays-Bas"
+    question: "Quel pays est célèbre pour sa Tour Eiffel ?",
+    options: ["Belgique", "France", "Italie", "Espagne"],
+    reponse: "France"
   },
   {
-    question: "Quel archipel est réputé pour ses plages paradisiaques et se situe dans l'océan Indien ?",
-    options: ["Cap-Vert", "Seychelles", "Canaries", "Philippines"],
-    reponse: "Seychelles"
+    question: "Quel pays a pour capitale Ottawa ?",
+    options: ["États-Unis", "Canada", "Australie", "Nouvelle-Zélande"],
+    reponse: "Canada"
+  },
+  {
+    question: "Dans quel pays se trouve le désert du Sahara ?",
+    options: ["Afrique du Sud", "Maroc", "Algérie", "Kenya"],
+    reponse: "Algérie"
+  },
+  {
+    question: "Je suis un pays d’Amérique du Sud connu pour le football, le carnaval et la forêt amazonienne. Je suis…",
+    options: ["Colombie", "Brésil", "Chili", "Argentine"],
+    reponse: "Brésil"
+  },
+  {
+    question: "Je suis une nation insulaire d’Asie du Sud-Est, célèbre pour mes plages et mes volcans. Je suis…",
+    options: ["Indonésie", "Philippines", "Thaïlande", "Malaisie"],
+    reponse: "Indonésie"
+  },
+  // 5 devinettes sur les fast-foods
+  {
+    question: "Je suis une boisson gazeuse très populaire souvent servie avec un menu fast-food. Je suis…",
+    options: ["Jus d’orange", "Thé glacé", "Coca-Cola", "Eau"],
+    reponse: "Coca-Cola"
+  },
+  {
+    question: "Je suis un sandwich rond, souvent garni de viande, de fromage et de salade. On me trouve dans presque tous les fast-foods. Je suis…",
+    options: ["Pizza", "Hot-dog", "Hamburger", "Wrap"],
+    reponse: "Hamburger"
+  },
+  {
+    question: "Je suis une galette de maïs mexicaine garnie de viande, légumes et sauce piquante. Je suis…",
+    options: ["Burrito", "Tacos", "Quesadilla", "Nachos"],
+    reponse: "Tacos"
+  },
+  {
+    question: "Je suis un plat italien fait de pâte, de sauce tomate et de fromage fondu. Je suis…",
+    options: ["Risotto", "Spaghetti", "Pizza", "Lasagnes"],
+    reponse: "Pizza"
+  },
+
+
+  // 5 devinettes sur les plats traditionnels
+  {
+    question: "Quel plat italien est fait de couches de pâtes, de viande et de béchamel ?",
+    options: ["Pizza", "Risotto", "Lasagnes", "Spaghetti Carbonara"],
+    reponse: "Lasagnes"
+  },
+  {
+    question: "Quel plat traditionnel japonais est fait de riz vinaigré et de poisson cru ?",
+    options: ["Ramen", "Sushi", "Tempura", "Miso Soup"],
+    reponse: "Sushi"
+  },
+  {
+    question: "Quel plat mexicain est une tortilla garnie de viande, haricots et fromage ?",
+    options: ["Taco", "Burrito", "Quesadilla", "Enchilada"],
+    reponse: "Burrito"
+  },
+  {
+    question: "Quel plat français est une crêpe salée à base de sarrasin ?",
+    options: ["Crêpe", "Galette", "Quiche", "Croque-monsieur"],
+    reponse: "Galette"
+  },
+  {
+    question: "Quel plat algérien est un couscous aux légumes et viande ?",
+    options: ["Tajine", "Chorba", "Couscous", "Merguez"],
+    reponse: "Couscous"
+  },
+	  {
+    question: "Je suis une forteresse médiévale édifiée au XIIIᵉ siècle par les Mérinides, perchée sur une colline au sud de Tlemcen. Qui suis-je ?",
+    options: ["Palais El Mechouar", "Mansourah", "Citadelle de Nedroma", "Kasbah des Andalouses"],
+    reponse: "Mansourah"
+  },
+  {
+    question: "Je suis un site naturel emblématique de Tlemcen avec une cascade de 27m de haut, surnommé 'la mariée voilée'. Je m'appelle...",
+    options: ["Les grottes de Beni Add", "Le canyon de Sidi Boumediene", "Les chutes d'El-Ourit", "Le lac de Dayet El-Ferd"],
+    reponse: "Les chutes d'El-Ourit"
+  },
+  {
+    question: "Je suis un plat traditionnel tlemcenien à base de semoule fine, de poulet et d'oignons caramélisés, souvent servi lors des fêtes familiales. Je suis...",
+    options: ["La chorba beida", "Le mtewem", "La rechta", "Le trid"],
+    reponse: "Le mtewem"
+  },
+	  {
+    question: "Je suis ca personne préféré , sont bonheur et sont Avenir sont moi la vie de wail est vide",
+    options: ["Nesrine", "l'internet", "sa famille", "une voiture"],
+    reponse: "Le mtewem"
   }
+	
 ];
-
-
 
 let index = 0;
 let score = 0;
