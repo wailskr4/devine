@@ -7,15 +7,16 @@
   --text-color: #2b2d42;
   --bg-color: #f8f9fa;
   --card-bg: #ffffff;
-  --error-color: #f72585;
-  --success-color: #4cc9f0;
-  --warning-color: #f8961e;
+  --error-color: #e63946; /* Slightly warmer red for error */
+  --success-color: #2a9d8f; /* More vibrant teal for success */
+  --warning-color: #ffb703; /* Brighter yellow for warning */
   --disabled-color: #adb5bd;
-  --overlay-color: rgba(0, 0, 0, 0.7);
+  --overlay-color: rgba(0, 0, 0, 0.6); /* Slightly less opaque overlay */
 
   /* Dégradés */
-  --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  --success-gradient: linear-gradient(135deg, var(--success-color), #38b000);
+  --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Explicit stops */
+  --success-gradient: linear-gradient(135deg, var(--success-color) 0%, #38b000 100%); /* Explicit stops */
+  --incorrect-gradient: linear-gradient(135deg, var(--error-color) 0%, #cc0000 100%); /* New gradient for incorrect answers */
 
   /* Espacements */
   --spacing-xs: 0.5rem;
@@ -30,9 +31,9 @@
   --border: 2px solid #e9ecef;
 
   /* Ombres */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08); /* Slightly lighter shadow */
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12); /* Slightly deeper shadow */
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
   --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 
   /* Typographie */
@@ -41,12 +42,13 @@
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
   --font-size-xl: 1.5rem;
-  --font-size-xxl: 2rem;
+  --font-size-xxl: 2.25rem; /* Slightly larger for final score */
 
   /* Animations */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  --transition-fast: 0.18s ease-out; /* Slightly longer, more natural ease */
+  --transition-normal: 0.35s ease-out; /* Slightly longer, more natural ease */
+  --transition-slow: 0.6s ease-out; /* Slightly longer, more natural ease */
+  --bounce-easing: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* For bouncy effects */
 }
 
 /* Thème sombre */
@@ -54,12 +56,14 @@
   --primary-color: #4895ef;
   --secondary-color: #4361ee;
   --accent-color: #3f37c9;
-  --text-color: #f8f9fa;
-  --bg-color: #212529;
-  --card-bg: #2b2d42;
+  --text-color: #e9ecef; /* Lighter text for dark theme */
+  --bg-color: #1a1b26; /* Darker background */
+  --card-bg: #2d2f3b; /* Darker card background */
   --border: 2px solid #495057;
   --overlay-color: rgba(0, 0, 0, 0.85);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* Reset amélioré */
@@ -86,6 +90,7 @@ body {
   transition: background-color var(--transition-normal), color var(--transition-normal);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; /* For Firefox */
 }
 
 /* Layout amélioré */
@@ -99,13 +104,28 @@ body {
   box-shadow: var(--shadow-md);
   position: relative;
   z-index: 10;
+  overflow: hidden; /* For pseudo-element gradient effect */
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start off-screen */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.8s ease-in-out;
+  animation: header-shine 3s infinite ease-out; /* Continuous shine effect */
+  animation-delay: 1s; /* Start after a delay */
 }
 
 .title {
   font-family: var(--font-heading);
   font-size: var(--font-size-xl);
   font-weight: 600;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px; /* Slightly more letter spacing */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .game-container {
@@ -135,11 +155,12 @@ body {
   box-shadow: var(--shadow-sm);
   text-align: center;
   flex: 1;
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .stat-box:hover {
-  transform: translateY(-3px);
+  transform: translateY(-5px) scale(1.02); /* More pronounced hover */
+  box-shadow: var(--shadow-md);
 }
 
 .stat-label {
@@ -153,6 +174,7 @@ body {
   font-size: var(--font-size-lg);
   font-weight: 600;
   color: var(--primary-color);
+  transition: color var(--transition-fast); /* Smooth color change */
 }
 
 .progress-container {
@@ -169,6 +191,7 @@ body {
   background: var(--primary-gradient);
   width: 0%;
   transition: width var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 6px; /* Ensure rounded ends */
 }
 
 /* Carte de devinette améliorée */
@@ -180,11 +203,30 @@ body {
   margin-bottom: var(--spacing-md);
   border: 1px solid rgba(0, 0, 0, 0.05);
   transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden; /* For subtle background animation */
+}
+
+.riddle-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(var(--primary-color-rgb), 0.05) 0%, transparent 70%); /* Subtle radial glow */
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: 0;
 }
 
 .riddle-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px) scale(1.01); /* More pronounced hover */
   box-shadow: var(--shadow-lg);
+}
+
+.riddle-card:hover::before {
+  opacity: 1;
 }
 
 .riddle-text {
@@ -192,13 +234,15 @@ body {
   margin-bottom: var(--spacing-lg);
   text-align: center;
   font-weight: 500;
-  line-height: 1.7;
+  line-height: 1.8; /* Slightly more line height */
+  position: relative; /* To be above pseudo-element */
+  z-index: 1;
 }
 
 /* Options améliorées */
 .options-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Slightly wider min width */
   gap: var(--spacing-sm);
   margin-top: var(--spacing-md);
 }
@@ -214,6 +258,8 @@ body {
   transition: all var(--transition-fast);
   position: relative;
   overflow: hidden;
+  text-align: center;
+  font-weight: 500;
 }
 
 .options-grid button::after {
@@ -223,40 +269,46 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)); /* Slightly more visible shine */
   opacity: 0;
-  transition: opacity var(--transition-fast);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+  transform: translateY(-100%); /* Start above */
 }
 
 .options-grid button:hover:not(:disabled) {
-  transform: translateY(-3px);
+  transform: translateY(-5px); /* More pronounced hover */
   box-shadow: var(--shadow-sm);
   border-color: var(--primary-color);
 }
 
 .options-grid button:hover::after {
   opacity: 1;
+  transform: translateY(0); /* Slide down */
 }
 
 .options-grid button:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98); /* Slight squash on active */
+  transition: transform 0.05s ease-in;
 }
 
 .options-grid button:disabled {
   cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.6; /* Slightly less opaque */
+  pointer-events: none; /* Ensure no interaction */
 }
 
 .options-grid button.correct {
   background: var(--success-gradient);
   color: white;
   border-color: transparent;
+  animation: bounceIn 0.5s var(--bounce-easing); /* Bouncy correct animation */
 }
 
 .options-grid button.incorrect {
-  background-color: var(--error-color);
+  background: var(--incorrect-gradient); /* Use new incorrect gradient */
   color: white;
   border-color: transparent;
+  animation: shake 0.5s ease-in-out; /* Shake for incorrect */
 }
 
 /* Feedback amélioré */
@@ -269,6 +321,17 @@ body {
   padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
   background-color: rgba(0, 0, 0, 0.05);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.feedback-message.correct {
+  background-color: rgba(var(--success-color-rgb), 0.15); /* Light success background */
+  color: var(--success-color);
+}
+
+.feedback-message.incorrect {
+  background-color: rgba(var(--error-color-rgb), 0.15); /* Light error background */
+  color: var(--error-color);
 }
 
 /* Boutons améliorés */
@@ -286,34 +349,40 @@ body {
   gap: var(--spacing-xs);
   position: relative;
   overflow: hidden;
-  min-width: 120px;
+  min-width: 140px; /* Slightly wider buttons */
+  letter-spacing: 0.5px;
 }
 
 .btn::after {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
+  left: -100%; /* Start off-screen */
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
-  opacity: 0;
-  transition: opacity var(--transition-fast);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent); /* Stronger shine */
+  transition: left 0.4s ease-out;
 }
 
 .btn:hover::after {
-  opacity: 1;
+  left: 100%; /* Slide across */
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.99); /* Slight squash on active */
+  transition: transform 0.05s ease-in;
 }
 
 .btn-primary {
   background: var(--primary-gradient);
   color: white;
   box-shadow: var(--shadow-sm);
+  border: 1px solid transparent; /* Consistent border */
 }
 
 .btn-primary:hover {
   background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-  transform: translateY(-3px);
+  transform: translateY(-5px); /* More pronounced hover */
   box-shadow: var(--shadow-md);
 }
 
@@ -326,7 +395,7 @@ body {
 .btn-secondary:hover {
   background-color: var(--accent-color);
   color: white;
-  transform: translateY(-3px);
+  transform: translateY(-5px); /* More pronounced hover */
   box-shadow: var(--shadow-sm);
   border-color: transparent;
 }
@@ -334,10 +403,14 @@ body {
 .btn-share {
   background-color: #25d366;
   color: white;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid transparent;
 }
 
 .btn-share:hover {
   background-color: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
 }
 
 .game-controls {
@@ -363,7 +436,7 @@ body {
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--transition-normal);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(8px); /* More blur for a softer effect */
 }
 
 .result-modal.visible {
@@ -379,24 +452,39 @@ body {
   width: 90%;
   text-align: center;
   box-shadow: var(--shadow-lg);
-  transform: scale(0.9);
-  transition: transform var(--transition-normal);
+  transform: scale(0.8); /* Start smaller */
+  transition: transform var(--transition-normal) var(--bounce-easing); /* Bouncy entry */
   border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative; /* For inner glow */
+  overflow: hidden;
 }
 
 .result-modal.visible .modal-content {
   transform: scale(1);
 }
 
+.modal-content::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(var(--primary-color-rgb), 0.1) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
 .final-score {
   font-size: var(--font-size-xxl);
-  font-weight: 600;
-  color: var(--primary-color);
+  font-weight: 700; /* Bolder for impact */
   margin: var(--spacing-md) 0;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  letter-spacing: 1px; /* Slight letter spacing */
+  animation: text-pop-in 0.8s var(--bounce-easing); /* Pop-in animation */
 }
 
 .final-message {
@@ -419,7 +507,8 @@ body {
   margin-top: auto;
   font-size: 0.875rem;
   color: var(--disabled-color);
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.03); /* Lighter background */
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Thème switch amélioré */
@@ -431,26 +520,32 @@ body {
   background: none;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.75rem; /* Slightly larger icon */
   cursor: pointer;
   padding: var(--spacing-xs);
-  transition: transform var(--transition-fast);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .theme-switch button:hover {
-  transform: rotate(30deg) scale(1.1);
+  transform: rotate(45deg) scale(1.15); /* More playful rotation */
+  filter: brightness(1.2); /* Slight brightness increase */
 }
 
-/* Icônes thématiques */
-.medecine-icon { 
+/* Icônes thématiques (added for consistency) */
+.icon {
+  display: inline-block; /* Ensure consistent spacing */
+  line-height: 1; /* Prevent extra space */
+}
+
+.medecine-icon {
   color: #e63946;
   margin-right: 0.5rem;
 }
 
-.pays-icon { 
+.pays-icon {
   color: #2a9d8f;
   margin-right: 0.5rem;
 }
@@ -484,7 +579,7 @@ body {
 
   .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 320px; /* Slightly wider on mobile */
   }
 
   .riddle-card {
@@ -497,39 +592,88 @@ body {
     flex-direction: column;
     gap: var(--spacing-sm);
     text-align: center;
+    padding: var(--spacing-sm);
+  }
+
+  .title {
+    font-size: var(--font-size-xl);
   }
 
   .stats {
     flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .stat-box {
+    padding: var(--spacing-xs);
+  }
+
+  .game-container {
+    padding: 0 var(--spacing-sm);
+    margin: var(--spacing-md) auto;
   }
 }
 
 /* Animations améliorées */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
+  from { opacity: 0; transform: translateY(20px); } /* More pronounced starting point */
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% { transform: scale(1); box-shadow: var(--shadow-sm); }
+  50% { transform: scale(1.03); box-shadow: var(--shadow-md); } /* Stronger pulse, ties to shadow */
+  100% { transform: scale(1); box-shadow: var(--shadow-sm); }
 }
 
+@keyframes bounceIn {
+  0%, 20%, 40%, 60%, 80%, 100% {
+    transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  0% { opacity: 0; transform: scale3d(0.3, 0.3, 0.3); }
+  20% { transform: scale3d(1.1, 1.1, 1.1); }
+  40% { transform: scale3d(0.9, 0.9, 0.9); }
+  60% { opacity: 1; transform: scale3d(1.03, 1.03, 1.03); }
+  80% { transform: scale3d(0.97, 0.97, 0.97); }
+  100% { opacity: 1; transform: scale3d(1, 1, 1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes header-shine {
+  0% {
+    transform: translateX(-100%) skewX(-20deg);
+  }
+  60%, 100% {
+    transform: translateX(200%) skewX(-20deg);
+  }
+}
+
+@keyframes text-pop-in {
+  0% { opacity: 0; transform: translateY(20px) scale(0.8); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+
 .riddle-card {
-  animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards; /* Longer, smoother fadeIn */
 }
 
 .btn-primary {
-  animation: pulse 2s infinite;
+  animation: pulse 2.5s infinite ease-in-out; /* Slower, smoother pulse */
 }
 
 /* Effets de focus accessibilité */
 button:focus-visible,
 input:focus-visible,
 a:focus-visible {
-  outline: 2px solid var(--accent-color);
-  outline-offset: 2px;
+  outline: 3px solid var(--accent-color); /* Thicker outline */
+  outline-offset: 4px; /* More offset */
+  border-radius: var(--border-radius-sm); /* Match border radius */
 }
 
 /* Classe utilitaire */
@@ -547,4 +691,11 @@ a:focus-visible {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+/* Utility for RGB values in rgba() */
+:root {
+  --primary-color-rgb: 67, 97, 238; /* R, G, B values of --primary-color */
+  --success-color-rgb: 42, 157, 143; /* R, G, B values of --success-color */
+  --error-color-rgb: 230, 57, 70; /* R, G, B values of --error-color */
 }
