@@ -16,35 +16,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Quiz Game Data
 const devinettes = [
-  // Countries
-  { question: "ana bntkom mouchaghba ydraa mon nom entier  ?", options: ["Ellyne lilya", "ellyne", "Ellyne lujain", "Ellyne hafida "], reponse: "Ellyne lilya" },
-  { question: "Dans quel pays se trouve la ville de Marrakech ?", options: ["Algérie", "Tunisie", "Maroc", "Égypte"], reponse: "Maroc" },
-  { question: "Quel pays est célèbre pour sa Tour Eiffel ?", options: ["Belgique", "France", "Italie", "Espagne"], reponse: "France" },
-  { question: "Quel pays a pour capitale Ottawa ?", options: ["États-Unis", "Canada", "Australie", "Nouvelle-Zélande"], reponse: "Canada" },
-  { question: "Dans quel pays se trouve le désert du Sahara ?", options: ["Afrique du Sud", "Maroc", "Algérie", "Kenya"], reponse: "Algérie" },
-  { question: "Je suis un pays d'Amérique du Sud connu pour le football, le carnaval et la forêt amazonienne. Je suis...", options: ["Colombie", "Brésil", "Chili", "Argentine"], reponse: "Brésil" },
-  { question: "Je suis une nation insulaire d'Asie du Sud-Est, célèbre pour mes plages et mes volcans. Je suis...", options: ["Indonésie", "Philippines", "Thaïlande", "Malaisie"], reponse: "Indonésie" },
+   { question: "ana bntkom mouchaghba ydraa mon nom entier  ?", options: ["Ellyne lilya", "ellyne", "Ellyne lujain", "Ellyne hafida "], reponse: "Ellyne lilya" },
+  { question: "quelle est le Pays préféré de ellye ?", options: ["Algérie", "Canada", "Chine", "Égypte"], reponse: "Chine" },
+  { question: " Quelle seront les couleur préféré de ellye ?", options: ["rose et vert", "rose et rouge", "vert et noir ", "gris et blanc"], reponse: "rose et vert" },
+{ question: " inchallah quant sera mon anniv  ?", options: ["proche de papa", "proche de maman", "unique 😎​ ", "au hazar"], reponse: "proche de papa" },
   
-  // Fast Food
-  { question: "Je suis une boisson gazeuse très populaire souvent servie avec un menu fast-food. Je suis...", options: ["Jus d'orange", "Thé glacé", "Coca-Cola", "Eau"], reponse: "Coca-Cola" },
-  { question: "Je suis un sandwich rond, souvent garni de viande, de fromage et de salade. On me trouve dans presque tous les fast-foods. Je suis...", options: ["Pizza", "Hot-dog", "Hamburger", "Wrap"], reponse: "Hamburger" },
-  { question: "Je suis une galette de maïs mexicaine garnie de viande, légumes et sauce piquante. Je suis...", options: ["Burrito", "Tacos", "Quesadilla", "Nachos"], reponse: "Tacos" },
-  { question: "Je suis un plat italien fait de pâte, de sauce tomate et de fromage fondu. Je suis...", options: ["Risotto", "Spaghetti", "Pizza", "Lasagnes"], reponse: "Pizza" },
-  
-  // Traditional Dishes
-  { question: "Quel plat italien est fait de couches de pâtes, de viande et de béchamel ?", options: ["Pizza", "Risotto", "Lasagnes", "Spaghetti Carbonara"], reponse: "Lasagnes" },
-  { question: "Quel plat traditionnel japonais est fait de riz vinaigré et de poisson cru ?", options: ["Ramen", "Sushi", "Tempura", "Miso Soup"], reponse: "Sushi" },
-  { question: "Quel plat mexicain est une tortilla garnie de viande, haricots et fromage ?", options: ["Taco", "Burrito", "Quesadilla", "Enchilada"], reponse: "Burrito" },
-  { question: "Quel plat français est une crêpe salée à base de sarrasin ?", options: ["Crêpe", "Galette", "Quiche", "Croque-monsieur"], reponse: "Galette" },
-  { question: "Quel plat algérien est un couscous aux légumes et viande ?", options: ["Tajine", "Chorba", "Couscous", "Merguez"], reponse: "Couscous" },
-  
-  // Local Algerian References
-  { question: "Je suis une forteresse médiévale édifiée au XIIIᵉ siècle par les Mérinides, perchée sur une colline au sud de Tlemcen. Qui suis-je ?", options: ["Palais El Mechouar", "Mansourah", "Citadelle de Nedroma", "Kasbah des Andalouses"], reponse: "Mansourah" },
-  { question: "Je suis un site naturel emblématique de Tlemcen avec une cascade de 27m de haut, surnommé 'la mariée voilée'. Je m'appelle...", options: ["Les grottes de Beni Add", "Le canyon de Sidi Boumediene", "Les chutes d'El-Ourit", "Le lac de Dayet El-Ferd"], reponse: "Les chutes d'El-Ourit" },
-  { question: "Je suis un plat traditionnel tlemcenien à base de semoule fine, de poulet et d'oignons caramélisés, souvent servi lors des fêtes familiales. Je suis...", options: ["La chorba beida", "Le mtewem", "La rechta", "Le trid"], reponse: "Le mtewem" },
-  
-  // Personal Question
-  { question: "Je suis ca personne préféré, son bonheur et son avenir sont moi la vie de Wail est vide", options: ["Nesrine", "l'internet", "sa famille", "une voiture"], reponse: "Nesrine" }
+ { question: "Je suis une ville italienne célèbre pour mes canaux et mes gondoles. Je suis...", options: ["Rome", "Venise", "Florence", "Milan"], reponse: "Venise" },
+{ question: "Je suis un monument emblématique de Paris et symbole de la France. Je suis...", options: ["L'Arc de Triomphe", "Le Louvre", "La Tour Eiffel", "Notre-Dame"], reponse: "La Tour Eiffel" },
+{ question: "Je suis un pays européen connu pour le Big Ben et le thé. Je suis...", options: ["France", "Italie", "Angleterre", "Espagne"], reponse: "Angleterre" },
+{ question: "Je suis une chaîne de montagnes située entre la France et l’Espagne. Je suis...", options: ["Les Alpes", "Les Pyrénées", "Les Carpates", "Les Balkans"], reponse: "Les Pyrénées" },
+{ question: "Je suis une ville espagnole célèbre pour sa Sagrada Família. Je suis...", options: ["Madrid", "Séville", "Valence", "Barcelone"], reponse: "Barcelone" },
+
+
+{ question: "quant  l'Inde a-t-elle obtenu son indépendance ?", options: ["1945 aout 15", "1947 aout 15", "1950 septembre 11", "1952 juin 06"], reponse: "1947 aout 15" },
+{ question: "Je suis un plat indien à base de riz et d'épices, souvent accompagné de viande. Je suis...", options: ["Biryani", "Tandoori", "Dahl", "Roti"], reponse: "Biryani" },
+{ question: "Je suis une boisson indienne sucrée à base de yaourt. Je suis...", options: ["Lassi", "Chai", "Masala", "Nimbu pani"], reponse: "Lassi" },
+{ question: "Je suis un pain plat indien souvent servi avec des plats en sauce. Je suis...", options: ["Chapati", "Naan", "Papadam", "Paratha"], reponse: "Naan" },
+
+
+  { question: "Je suis une soupe traditionnelle algérienne, servie durant le Ramadan. et nesrine me cuisinera pour wail ​❤️​", options: ["Chorba", "Hrira", "Jari", "Loubia"], reponse: "Hrira" },
+{ question: "Je suis un couscous typique avec pois chiches, légumes et viande. Je suis...", options: ["Tlitli", "Chakhchoukha", "Couscous", "Trid"], reponse: "Couscous" },
+{ question: "Je suis un pain farci algérien cuit à la poêle. Je suis...", options: ["Kesra", "Mhadjeb", "Khobz dar", "Galette"], reponse: "Mhadjeb" },
+{ question: "Je suis un plat à base de pâte roulée et de viande hachée. Je suis...", options: ["Tlitli", "Dolma", "Rechta", "Mtewem"], reponse: "Rechta" },
+{ question: "Je suis une boisson gazeuse souvent consommée dans les fast-foods. Je suis...", options: ["Sprite", "Fanta", "Coca-Cola", "Pepsi"], reponse: "Coca-Cola" },
+{ question: "Je suis un snack composé de pain, viande, fromage, et légumes. Je suis...", options: ["Tacos", "Panini", "Hamburger", "Hot-dog"], reponse: "Hamburger" },
+{ question: "Je suis un plat traditionnel à base de semoule, viande et sauce rouge. Je suis...", options: ["Chakhchoukha", "Couscous", "Mtewem", "Tajine"], reponse: "Chakhchoukha" },
+{ question: "Je suis une crêpe fine sucrée ou salée originaire d'Algérie. Je suis...", options: ["Baghrir", "Msemen", "Mhadjeb", "Kesra"], reponse: "Msemen" },
+{ question: "Je suis un dessert algérien à base de semoule, beurre et miel. Je suis...", options: ["Makrout", "Baklava", "Zlabia", "Kalb el louz"], reponse: "Makrout" },
+
+  { question: "Je suis une pâtisserie française et nesrine m'aime beaucoup ​❤️​", options: ["Éclair", "Madeleine", "Macaron", "Tartelette"], reponse: "Macaron" },
+{ question: "Je suis une pâtisserie feuilletée garnie de crème et glacée sur le dessus. Je suis...", options: ["Mille-feuille", "Paris-Brest", "Éclair", "Opéra"], reponse: "Mille-feuille" },
+{ question: "Je suis un bonbon gélifié souvent en forme d’ourson. Je suis...", options: ["Dragée", "Caramel", "Ourson", "Gomme"], reponse: "Ourson" },
+{ question: "Je suis une pâtisserie moelleuse souvent servie avec du thé. Je suis...", options: ["Biscuit", "Madeleine", "Gâteau", "Financier"], reponse: "Madeleine" },
+{ question: "Je suis une confiserie orientale à base de pâte d'amande et de miel. Je suis...", options: ["Nougat", "Makrout", "Zlabia", "Baklava"], reponse: "Baklava" },
+
+{ 
+  question: "Je suis son bonheur, son avenir, son futur et sa femme. Qui suis-je ? ❤️", 
+  options: ["Nesrine 💋​", "❤️​​nesrine hafoudti 🥰", "Rina hafouda ​🩷​", "Bnoutie nesrine ​💚​💙​"], 
+  reponse: ["Nesrine 💋​", "❤️​​nesrine hafoudti 🥰", "Rina hafouda ​🩷​", "Bnoutie nesrine ​💚​💙​"] 
+}
 ];
 
 // Game State
@@ -94,25 +104,37 @@ function chargerDevinette() {
 
 // Vérifier la réponse
 function verifierReponse(reponseChoisie) {
-  const reponseCorrecte = devinettes[index].reponse;
+  const bonneReponse = devinettes[index].reponse;
+
+  const estCorrect = Array.isArray(bonneReponse)
+    ? bonneReponse.includes(reponseChoisie)
+    : reponseChoisie === bonneReponse;
+
   const tousBoutons = document.querySelectorAll(".option-btn");
 
+  // Désactiver les boutons et indiquer les bonnes/mauvaises réponses
   tousBoutons.forEach(btn => {
     btn.disabled = true;
-    if (btn.textContent === reponseCorrecte) {
+
+    if (
+      (Array.isArray(bonneReponse) && bonneReponse.includes(btn.textContent)) ||
+      btn.textContent === bonneReponse
+    ) {
       btn.classList.add("correct");
-    } else if (btn.textContent === reponseChoisie && reponseChoisie !== reponseCorrecte) {
+    } else if (btn.textContent === reponseChoisie && !estCorrect) {
       btn.classList.add("incorrect");
     }
   });
 
-  if (reponseChoisie === reponseCorrecte) {
+  if (estCorrect) {
     elements.feedback.textContent = "Bonne réponse !";
     elements.feedback.classList.add("correct-text");
     score++;
     updateScoreDisplay();
   } else {
-    elements.feedback.textContent = `Faux ! La bonne réponse était : ${reponseCorrecte}`;
+    elements.feedback.textContent = `Faux ! La bonne réponse était : ${
+      Array.isArray(bonneReponse) ? bonneReponse[0] : bonneReponse
+    }`;
     elements.feedback.classList.add("incorrect-text");
   }
 
@@ -182,11 +204,7 @@ function reinitialiserJeu() {
   index = 0;
   score = 0;
   updateScoreDisplay();
-
-  indiceUtilisations = 0; // 🔸 on remet à zéro le compteur
-
   chargerDevinette();
-
 }
 
 // Events
