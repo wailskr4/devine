@@ -159,7 +159,7 @@ function afficherIndice() {
   const mauvaisesAEnlever = mauvaisesReponses.sort(() => 0.5 - Math.random()).slice(0, 2);
   mauvaisesAEnlever.forEach(btn => btn.style.visibility = "hidden");
 
-  elements.feedback.textContent = `Indice : Deux mauvaises réponses ont été supprimées. (${indiceUtilisations + 1}/3)`;
+  elements.feedback.textContent = `Indice : Deux mauvaises réponses ont été supprimées 3iniya bonne chance a nous 🫂​ (${indiceUtilisations + 1}/3)`;
   elements.feedback.classList.remove("correct-text", "incorrect-text");
 
   elements.indiceBtn.disabled = true;
