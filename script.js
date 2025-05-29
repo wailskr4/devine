@@ -182,7 +182,11 @@ function reinitialiserJeu() {
   index = 0;
   score = 0;
   updateScoreDisplay();
+
+  indiceUtilisations = 0; // 🔸 on remet à zéro le compteur
+
   chargerDevinette();
+
 }
 
 // Events
