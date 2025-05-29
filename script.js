@@ -40,7 +40,7 @@ const devinettes = [
 { question: "Je suis un plat à base de pâte roulée et de viande hachée. Je suis...", options: ["Tlitli", "Dolma", "Rechta", "Mtewem"], reponse: "Rechta" },
 { question: "Je suis une boisson gazeuse souvent consommée dans les fast-foods. Je suis...", options: ["Sprite", "Fanta", "Coca-Cola", "Pepsi"], reponse: "Coca-Cola" },
 { question: "Je suis un snack composé de pain, viande, fromage, et légumes. Je suis...", options: ["Tacos", "Panini", "Hamburger", "Hot-dog"], reponse: "Hamburger" },
-{ question: "Je suis un plat traditionnel à base de semoule, viande et sauce rouge. Je suis...", options: ["Chakhchoukha", "Couscous", "Mtewem", "Tajine"], reponse: "Chakhchoukha" },
+{ question: "Je suis un plat traditionnel à base de semoule, viande et sauce rouge. Wail veut me cuisiné pour 7abibto", options: ["Chakhchoukha", "Couscous", "Mtewem", "Tajine"], reponse: "Chakhchoukha" },
 { question: "Je suis une crêpe fine sucrée ou salée originaire d'Algérie. Je suis...", options: ["Baghrir", "Msemen", "Mhadjeb", "Kesra"], reponse: "Msemen" },
 { question: "Je suis un dessert algérien à base de semoule, beurre et miel. Je suis...", options: ["Makrout", "Baklava", "Zlabia", "Kalb el louz"], reponse: "Makrout" },
 
