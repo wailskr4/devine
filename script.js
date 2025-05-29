@@ -9,16 +9,15 @@ themeChanger.addEventListener("click", function() {
   localStorage.setItem("theme", newTheme);
 });
 
-// Set theme on page load
 document.addEventListener("DOMContentLoaded", function() {
   const savedTheme = localStorage.getItem("theme") || "light";
   document.documentElement.setAttribute("data-theme", savedTheme);
 });
 
-// Quiz Game Data and Logic
+// Quiz Game Data
 const devinettes = [
   // Countries
-  { question: "Quel pays est surnommé le pays du Soleil-Levant ?", options: ["Chine", "Corée du Sud", "Japon", "Vietnam"], reponse: "Japon" },
+  { question: "ana bntkom mouchaghba ydraa mon nom entier  ?", options: ["Ellyne lilya", "ellyne", "Ellyne lujain", "Ellyne hafida "], reponse: "Ellyne lilya" },
   { question: "Dans quel pays se trouve la ville de Marrakech ?", options: ["Algérie", "Tunisie", "Maroc", "Égypte"], reponse: "Maroc" },
   { question: "Quel pays est célèbre pour sa Tour Eiffel ?", options: ["Belgique", "France", "Italie", "Espagne"], reponse: "France" },
   { question: "Quel pays a pour capitale Ottawa ?", options: ["États-Unis", "Canada", "Australie", "Nouvelle-Zélande"], reponse: "Canada" },
@@ -63,12 +62,12 @@ const elements = {
   restartBtn: document.getElementById("restart"),
   finalScore: document.getElementById("final-score"),
   finalMessage: document.getElementById("final-message"),
-  scoreValue: document.getElementById("score-value")
+  scoreValue: document.getElementById("score-value"),
+  indiceBtn: document.getElementById("hint") // 🔸 nouveau bouton indice
 };
 
-// Game Functions
+// Charger une devinette
 function chargerDevinette() {
-  // Reset UI for new question
   elements.feedback.textContent = "";
   elements.nextBtn.style.display = "none";
   elements.nextBtn.disabled = true;
@@ -77,16 +76,13 @@ function chargerDevinette() {
   elements.restartBtn.classList.add("hidden");
   elements.finalScore.textContent = "";
   elements.finalMessage.textContent = "";
-  
-  // Load current question
+  elements.indiceBtn.disabled = false; // 🔸 activer indice
+
   const devinetteActuelle = devinettes[index];
   elements.riddle.textContent = devinetteActuelle.question;
-  
-  // Update progress bar
   const pourcentage = (index / devinettes.length) * 100;
   elements.progressBar.style.width = `${pourcentage}%`;
-  
-  // Create option buttons
+
   devinetteActuelle.options.forEach(option => {
     const btn = document.createElement("button");
     btn.textContent = option;
@@ -96,11 +92,11 @@ function chargerDevinette() {
   });
 }
 
+// Vérifier la réponse
 function verifierReponse(reponseChoisie) {
   const reponseCorrecte = devinettes[index].reponse;
   const tousBoutons = document.querySelectorAll(".option-btn");
-  
-  // Disable all buttons and show correct/incorrect answers
+
   tousBoutons.forEach(btn => {
     btn.disabled = true;
     if (btn.textContent === reponseCorrecte) {
@@ -109,8 +105,7 @@ function verifierReponse(reponseChoisie) {
       btn.classList.add("incorrect");
     }
   });
-  
-  // Provide feedback
+
   if (reponseChoisie === reponseCorrecte) {
     elements.feedback.textContent = "Bonne réponse !";
     elements.feedback.classList.add("correct-text");
@@ -120,24 +115,49 @@ function verifierReponse(reponseChoisie) {
     elements.feedback.textContent = `Faux ! La bonne réponse était : ${reponseCorrecte}`;
     elements.feedback.classList.add("incorrect-text");
   }
-  
-  // Enable next button
+
   elements.nextBtn.style.display = "inline-block";
   elements.nextBtn.disabled = false;
 }
 
+// Afficher l’indice (supprimer 2 mauvaises réponses)
+let indiceUtilisations = 0; // 🔸 compteur global des indices utilisés
+
+function afficherIndice() {
+  if (indiceUtilisations >= 3) {
+    elements.feedback.textContent = "C'est bon omri tu a utilisé tout les indice 😁";
+    elements.feedback.classList.remove("correct-text", "incorrect-text");
+    elements.indiceBtn.disabled = true;
+    return;
+  }
+
+  const reponseCorrecte = devinettes[index].reponse;
+  const boutons = Array.from(document.querySelectorAll(".option-btn"));
+  const mauvaisesReponses = boutons.filter(btn => btn.textContent !== reponseCorrecte);
+  const mauvaisesAEnlever = mauvaisesReponses.sort(() => 0.5 - Math.random()).slice(0, 2);
+  mauvaisesAEnlever.forEach(btn => btn.style.visibility = "hidden");
+
+  elements.feedback.textContent = `Indice : Deux mauvaises réponses ont été supprimées. (${indiceUtilisations + 1}/3)`;
+  elements.feedback.classList.remove("correct-text", "incorrect-text");
+
+  elements.indiceBtn.disabled = true;
+  indiceUtilisations++; // 🔸 incrémentation
+}
+
+
+// Score
 function updateScoreDisplay() {
   elements.scoreValue.textContent = score;
 }
 
+// Résultat final
 function afficherResultatFinal() {
   elements.riddle.textContent = "Bravo, tu as terminé toutes les devinettes !";
   elements.options.innerHTML = "";
   elements.feedback.textContent = "";
   elements.nextBtn.style.display = "none";
   elements.progressBar.style.width = "100%";
-  
-  // Determine final message based on score
+
   let messageFinal = "";
   if (score >= 14) {
     messageFinal = "Ma femme est une intellecte machallah";
@@ -146,19 +166,18 @@ function afficherResultatFinal() {
   } else {
     messageFinal = "Encore un effort zine jss tu peux faire mieux";
   }
-  
-  // Show final results
+
   elements.finalScore.innerHTML = `
     Tu as obtenu <strong>${score}</strong> bonne${score > 1 ? "s" : ""} réponse${score > 1 ? "s" : ""} 
     sur <strong>${devinettes.length}</strong>.
   `;
   elements.finalMessage.textContent = messageFinal;
-  
-  // Show result elements
+
   elements.scoreEl.classList.remove("hidden");
   elements.restartBtn.classList.remove("hidden");
 }
 
+// Redémarrer
 function reinitialiserJeu() {
   index = 0;
   score = 0;
@@ -166,7 +185,7 @@ function reinitialiserJeu() {
   chargerDevinette();
 }
 
-// Event Listeners
+// Events
 elements.nextBtn.addEventListener("click", () => {
   index++;
   if (index < devinettes.length) {
@@ -177,6 +196,7 @@ elements.nextBtn.addEventListener("click", () => {
 });
 
 elements.restartBtn.addEventListener("click", reinitialiserJeu);
+elements.indiceBtn.addEventListener("click", afficherIndice);
 
-// Initialize the game
+// Lancer le jeu
 chargerDevinette();
