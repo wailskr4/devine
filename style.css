@@ -1,22 +1,22 @@
 /* Variables CSS - Thème clair par défaut */
 :root {
-  /* Couleurs */
-  --primary-color: #4361ee;
-  --secondary-color: #3f37c9;
-  --accent-color: #4895ef;
-  --text-color: #2b2d42;
-  --bg-color: #f8f9fa;
+  /* Couleurs principales - Douces et romantiques */
+  --primary-color: #f48fb1; /* Rose tendre */
+  --secondary-color: #ce93d8; /* Lavande pastel */
+  --accent-color: #ffccbc; /* Pêche pastel */
+  --text-color: #4e4e50; /* Gris doux */
+  --bg-color: #fff0f6; /* Fond rose très clair */
   --card-bg: #ffffff;
-  --error-color: #e63946; /* Slightly warmer red for error */
-  --success-color: #2a9d8f; /* More vibrant teal for success */
-  --warning-color: #ffb703; /* Brighter yellow for warning */
-  --disabled-color: #adb5bd;
-  --overlay-color: rgba(0, 0, 0, 0.6); /* Slightly less opaque overlay */
+  --error-color: #f44336; /* Rouge doux */
+  --success-color: #81c784; /* Vert pastel */
+  --warning-color: #ffd54f; /* Jaune pastel */
+  --disabled-color: #d1c4e9; /* Lavande grisé */
+  --overlay-color: rgba(255, 192, 203, 0.5); /* Overlay rose pâle */
 
-  /* Dégradés */
-  --primary-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%); /* Explicit stops */
-  --success-gradient: linear-gradient(135deg, var(--success-color) 0%, #38b000 100%); /* Explicit stops */
-  --incorrect-gradient: linear-gradient(135deg, var(--error-color) 0%, #cc0000 100%); /* New gradient for incorrect answers */
+  /* Dégradés floraux et rêveurs */
+  --primary-gradient: linear-gradient(135deg, #f8bbd0, #e1bee7);
+  --success-gradient: linear-gradient(135deg, #a5d6a7, #81c784);
+  --incorrect-gradient: linear-gradient(135deg, #ef9a9a, #f48fb1);
 
   /* Espacements */
   --spacing-xs: 0.5rem;
@@ -25,45 +25,45 @@
   --spacing-lg: 2rem;
   --spacing-xl: 3rem;
 
-  /* Bordures */
-  --border-radius: 12px;
-  --border-radius-sm: 8px;
-  --border: 2px solid #e9ecef;
+  /* Bordures douces */
+  --border-radius: 16px;
+  --border-radius-sm: 12px;
+  --border: 2px dashed #f8bbd0;
 
-  /* Ombres */
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08); /* Slightly lighter shadow */
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.12); /* Slightly deeper shadow */
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.25); /* More pronounced shadow */
-  --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  /* Ombres douces et rêveuses */
+  --shadow-sm: 0 2px 8px rgba(244, 143, 177, 0.15);
+  --shadow-md: 0 6px 16px rgba(206, 147, 216, 0.25);
+  --shadow-lg: 0 16px 40px rgba(206, 147, 216, 0.35);
+  --shadow-inset: inset 0 2px 4px rgba(255, 182, 193, 0.2);
 
-  /* Typographie */
-  --font-base: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-heading: 'Roboto Slab', Georgia, serif;
+  /* Typographie romantique */
+  --font-base: 'Comic Neue', cursive, sans-serif;
+  --font-heading: 'Great Vibes', cursive;
   --font-size-base: 1rem;
   --font-size-lg: 1.25rem;
-  --font-size-xl: 1.5rem;
-  --font-size-xxl: 2.25rem; /* Slightly larger for final score */
+  --font-size-xl: 1.75rem;
+  --font-size-xxl: 2.5rem;
 
-  /* Animations */
-  --transition-fast: 0.18s ease-out; /* Slightly longer, more natural ease */
-  --transition-normal: 0.35s ease-out; /* Slightly longer, more natural ease */
-  --transition-slow: 0.6s ease-out; /* Slightly longer, more natural ease */
-  --bounce-easing: cubic-bezier(0.175, 0.885, 0.32, 1.275); /* For bouncy effects */
+  /* Animations douces */
+  --transition-fast: 0.25s ease-in-out;
+  --transition-normal: 0.5s ease-in-out;
+  --transition-slow: 0.8s ease-in-out;
+  --bounce-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 /* Thème sombre */
 [data-theme="dark"] {
-  --primary-color: #4895ef;
-  --secondary-color: #4361ee;
-  --accent-color: #3f37c9;
-  --text-color: #e9ecef; /* Lighter text for dark theme */
-  --bg-color: #1a1b26; /* Darker background */
-  --card-bg: #2d2f3b; /* Darker card background */
-  --border: 2px solid #495057;
-  --overlay-color: rgba(0, 0, 0, 0.85);
-  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 6px 16px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
+  --primary-color: #ba68c8;
+  --secondary-color: #ab47bc;
+  --accent-color: #f48fb1;
+  --text-color: #ffeef8;
+  --bg-color: #2d2232;
+  --card-bg: #3e2c41;
+  --border: 2px dashed #ce93d8;
+  --overlay-color: rgba(0, 0, 0, 0.7);
+  --shadow-sm: 0 2px 8px rgba(255, 192, 203, 0.15);
+  --shadow-md: 0 6px 16px rgba(255, 182, 193, 0.2);
+  --shadow-lg: 0 16px 40px rgba(255, 182, 193, 0.3);
 }
 
 /* Reset amélioré */
