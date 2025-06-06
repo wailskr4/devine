@@ -16,44 +16,49 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Quiz Game Data
 const devinettes = [
-   { question: "ana bntkom mouchaghba ydraa mon nom entier  ?", options: ["Ellyne lilya", "ellyne", "Ellyne lujain", "Ellyne hafida "], reponse: "Ellyne lilya" },
-  { question: "quelle est le Pays préféré de ellye ?", options: ["Algérie", "Canada", "Chine", "Égypte"], reponse: "Chine" },
-  { question: " Quelle seront les couleur préféré de ellye ?", options: ["rose et vert", "rose et rouge", "vert et noir ", "gris et blanc"], reponse: "rose et vert" },
-{ question: " inchallah quant sera mon anniv  ?", options: ["proche de papa", "proche de maman", "unique 😎​ ", "au hazar"], reponse: "proche de papa" },
-  
- { question: "Je suis une ville italienne célèbre pour mes canaux et mes gondoles. Je suis...", options: ["Rome", "Venise", "Florence", "Milan"], reponse: "Venise" },
-{ question: "Je suis un monument emblématique de Paris et symbole de la France. Je suis...", options: ["L'Arc de Triomphe", "Le Louvre", "La Tour Eiffel", "Notre-Dame"], reponse: "La Tour Eiffel" },
-{ question: "Je suis un pays européen connu pour le Big Ben et le thé. Je suis...", options: ["France", "Italie", "Angleterre", "Espagne"], reponse: "Angleterre" },
-{ question: "Je suis une chaîne de montagnes située entre la France et l’Espagne. Je suis...", options: ["Les Alpes", "Les Pyrénées", "Les Carpates", "Les Balkans"], reponse: "Les Pyrénées" },
-{ question: "Je suis une ville espagnole célèbre pour sa Sagrada Família. Je suis...", options: ["Madrid", "Séville", "Valence", "Barcelone"], reponse: "Barcelone" },
+  // 🌍 Europe
+  { question: "Je suis un pays européen connu pour le Big Ben et le thé. Je suis...", options: ["France", "Italie", "Angleterre", "Espagne"], reponse: "Angleterre" },
+  { question: "Je suis une ville italienne célèbre pour ses canaux et ses gondoles. Je suis...", options: ["Rome", "Venise", "Naples", "Milan"], reponse: "Venise" },
+  { question: "La Tour Eiffel se trouve dans quelle ville ?", options: ["Madrid", "Londres", "Paris", "Berlin"], reponse: "Paris" },
+  { question: "Je suis un petit pays européen célèbre pour ses chocolats et sa capitale Bruxelles. Je suis...", options: ["Belgique", "Pays-Bas", "Suisse", "Autriche"], reponse: "Belgique" },
+  { question: "La Sagrada Familia est un monument emblématique situé à...", options: ["Lisbonne", "Barcelone", "Milan", "Athènes"], reponse: "Barcelone" },
+  { question: "Je suis une île au sud de l’Italie, célèbre pour l’Etna. Je suis...", options: ["Sardaigne", "Crète", "Sicile", "Corse"], reponse: "Sicile" },
 
+  // 🌏 Asie
+  { question: "Je suis un pays asiatique connu pour le Mont Fuji et les sushis. Je suis...", options: ["Chine", "Corée", "Vietnam", "Japon"], reponse: "Japon" },
+  { question: "Le Taj Mahal se trouve dans quel pays ?", options: ["Pakistan", "Inde", "Bangladesh", "Sri Lanka"], reponse: "Inde" },
+  { question: "Je suis une ville futuriste des Émirats Arabes Unis, célèbre pour la tour Burj Khalifa. Je suis...", options: ["Abu Dhabi", "Doha", "Dubaï", "Mascate"], reponse: "Dubaï" },
+  { question: "Quel pays est surnommé « Le pays du matin calme » ?", options: ["Thaïlande", "Corée du Sud", "Japon", "Malaisie"], reponse: "Corée du Sud" },
+  { question: "Angkor Wat est un site historique situé au...", options: ["Vietnam", "Laos", "Cambodge", "Myanmar"], reponse: "Cambodge" },
+  { question: "Je suis un pays d’Asie célèbre pour ses plages et son pad thaï. Je suis...", options: ["Philippines", "Thaïlande", "Malaisie", "Indonésie"], reponse: "Thaïlande" },
 
-{ question: "quant  l'Inde a-t-elle obtenu son indépendance ?", options: ["1945 aout 15", "1947 aout 15", "1950 septembre 11", "1952 juin 06"], reponse: "1947 aout 15" },
-{ question: "Je suis un plat indien à base de riz et d'épices, souvent accompagné de viande. Je suis...", options: ["Biryani", "Tandoori", "Dahl", "Roti"], reponse: "Biryani" },
-{ question: "Je suis une boisson indienne sucrée à base de yaourt. Je suis...", options: ["Lassi", "Chai", "Masala", "Nimbu pani"], reponse: "Lassi" },
-{ question: "Je suis un pain plat indien souvent servi avec des plats en sauce. Je suis...", options: ["Chapati", "Naan", "Papadam", "Paratha"], reponse: "Naan" },
+  // 🌍 Afrique (surtout Algérie)
+  { question: "Je suis une ville algérienne surnommée la perle de l'ouest. Je suis...", options: ["Tlemcen", "Annaba", "Oran", "Sétif"], reponse: "Tlemcen" },
+  { question: "Quel monument historique célèbre peut-on visiter à Tipasa ?", options: ["Ruines romaines", "Fort turc", "Mosquée Ottomane", "Tombe phénicienne"], reponse: "Ruines romaines" },
+  { question: "Je suis une spécialité culinaire algérienne à base de semoule. Je suis...", options: ["Couscous", "Chakchouka", "Dolma", "Tajine"], reponse: "Couscous" },
+  { question: "Le désert du Sahara couvre une grande partie de quel pays ?", options: ["Tunisie", "Égypte", "Algérie", "Mali"], reponse: "Algérie" },
+  { question: "Je suis la capitale de l’Algérie. Je suis...", options: ["Alger", "Constantine", "Oran", "Batna"], reponse: "Alger" },
+  { question: "Je suis un pays africain célèbre pour les pyramides. Je suis...", options: ["Maroc", "Soudan", "Égypte", "Éthiopie"], reponse: "Égypte" },
 
+  // 🍛 Nourriture algérienne
+  { question: "Quel plat algérien est souvent servi lors des mariages et préparé avec des légumes, pois chiches et viande ?", options: ["Chorba", "Rechta", "Couscous", "Tajine"], reponse: "Couscous" },
+  { question: "Je suis une soupe traditionnelle consommée pendant le Ramadan. Je suis...", options: ["Harira", "Chorba", "Loubia", "Hrira"], reponse: "Chorba" },
+  { question: "Quel plat est typique de Constantine, fait de pâtes fines roulées à la main appelées \"trid\" ?", options: ["Rechta", "Mtewem", "Chakhchoukha", "Makroud"], reponse: "Chakhchoukha" },
 
-  { question: "Je suis une soupe traditionnelle algérienne, servie durant le Ramadan. et nesrine me cuisinera pour wail ​❤️​", options: ["Chorba", "Hrira", "Jari", "Loubia"], reponse: "Hrira" },
-{ question: "Je suis un couscous typique avec pois chiches, légumes et viande. Je suis...", options: ["Tlitli", "Chakhchoukha", "Couscous", "Trid"], reponse: "Couscous" },
-{ question: "Je suis un pain farci algérien cuit à la poêle. Je suis...", options: ["Kesra", "Mhadjeb", "Khobz dar", "Galette"], reponse: "Mhadjeb" },
-{ question: "Je suis un plat à base de pâte roulée et de viande hachée. Je suis...", options: ["Tlitli", "Dolma", "Rechta", "Mtewem"], reponse: "Rechta" },
-{ question: "Je suis une boisson gazeuse souvent consommée dans les fast-foods. Je suis...", options: ["Sprite", "Fanta", "Coca-Cola", "Pepsi"], reponse: "Coca-Cola" },
-{ question: "Je suis un snack composé de pain, viande, fromage, et légumes. Je suis...", options: ["Tacos", "Panini", "Hamburger", "Hot-dog"], reponse: "Hamburger" },
-{ question: "Je suis un plat traditionnel à base de semoule, viande et sauce rouge. Wail veut me cuisiné pour 7abibto", options: ["Chakhchoukha", "Couscous", "Mtewem", "Tajine"], reponse: "Chakhchoukha" },
-{ question: "Je suis une crêpe fine sucrée ou salée originaire d'Algérie. Je suis...", options: ["Baghrir", "Msemen", "Mhadjeb", "Kesra"], reponse: "Msemen" },
-{ question: "Je suis un dessert algérien à base de semoule, beurre et miel. Je suis...", options: ["Makrout", "Baklava", "Zlabia", "Kalb el louz"], reponse: "Makrout" },
+  // 🍰 Pâtisserie française
+  { question: "Je suis une pâtisserie française composée de coques colorées et d’une ganache au centre. Je suis...", options: ["Éclair", "Macaron", "Opéra", "Financier"], reponse: "Macaron" },
+  { question: "Je suis un dessert en forme de cylindre, garni de crème pâtissière, souvent parfumé au café ou au chocolat. Je suis...", options: ["Religieuse", "Éclair", "Paris-Brest", "Tartelette"], reponse: "Éclair" },
+  { question: "Quel gâteau en forme de couronne est garni de crème pralinée et nommé d’après une célèbre course cycliste ?", options: ["Saint-Honoré", "Paris-Brest", "Forêt-Noire", "Tropézienne"], reponse: "Paris-Brest" },
 
-  { question: "Je suis une pâtisserie française et nesrine m'aime beaucoup ​❤️​", options: ["Éclair", "Madeleine", "Macaron", "Tartelette"], reponse: "Macaron" },
-{ question: "Je suis une pâtisserie feuilletée garnie de crème et glacée sur le dessus. Je suis...", options: ["Mille-feuille", "Paris-Brest", "Éclair", "Opéra"], reponse: "Mille-feuille" },
-{ question: "Je suis un bonbon gélifié souvent en forme d’ourson. Je suis...", options: ["Dragée", "Caramel", "Ourson", "Gomme"], reponse: "Ourson" },
-{ question: "Je suis une pâtisserie moelleuse souvent servie avec du thé. Je suis...", options: ["Biscuit", "Madeleine", "Gâteau", "Financier"], reponse: "Madeleine" },
-{ question: "Je suis une confiserie orientale à base de pâte d'amande et de miel. Je suis...", options: ["Nougat", "Makrout", "Zlabia", "Baklava"], reponse: "Baklava" },
+  // 🍣 Plats japonais
+  { question: "Je suis un plat japonais à base de riz vinaigré et de poisson cru. Je suis...", options: ["Tempura", "Sushi", "Ramen", "Yakitori"], reponse: "Sushi" },
+  { question: "Quel plat japonais est une soupe à base de nouilles dans un bouillon ?", options: ["Ramen", "Soba", "Udon", "Miso"], reponse: "Ramen" },
+  { question: "Je suis un plat japonais composé de légumes ou fruits de mer frits dans une pâte légère. Je suis...", options: ["Katsu", "Tempura", "Onigiri", "Teriyaki"], reponse: "Tempura" },
 
 { 
-  question: "Je suis son bonheur, son avenir, son futur et sa femme. Qui suis-je ? ❤️", 
-  options: ["Nesrine 💋​", "❤️​​nesrine hafoudti 🥰", "Rina hafouda ​🩷​", "Bnoutie nesrine ​💚​💙​"], 
-  reponse: ["Nesrine 💋​", "❤️​​nesrine hafoudti 🥰", "Rina hafouda ​🩷​", "Bnoutie nesrine ​💚​💙​"] 
+  question: "combien d'enfant aura t'on inchallah ❤️", 
+  options: ["2 Garçons👦", "❤️Deux fille 🥰", "1 une fille et 1 garçon", "2 fille 2 garçon "], 
+  reponse: "❤️Deux fille 🥰"
 }
 ];
 
