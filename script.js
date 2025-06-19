@@ -17,49 +17,49 @@ document.addEventListener("DOMContentLoaded", function() {
 // Quiz Game Data
 const devinettes = [
   // 🌍 Europe
-  { question: "Je suis un pays européen connu pour le Big Ben et le thé. Je suis...", options: ["France", "Italie", "Angleterre", "Espagne"], reponse: "Angleterre" },
-  { question: "Je suis une ville italienne célèbre pour ses canaux et ses gondoles. Je suis...", options: ["Rome", "Venise", "Naples", "Milan"], reponse: "Venise" },
-  { question: "La Tour Eiffel se trouve dans quelle ville ?", options: ["Madrid", "Londres", "Paris", "Berlin"], reponse: "Paris" },
-  { question: "Je suis un petit pays européen célèbre pour ses chocolats et sa capitale Bruxelles. Je suis...", options: ["Belgique", "Pays-Bas", "Suisse", "Autriche"], reponse: "Belgique" },
-  { question: "La Sagrada Familia est un monument emblématique situé à...", options: ["Lisbonne", "Barcelone", "Milan", "Athènes"], reponse: "Barcelone" },
-  { question: "Je suis une île au sud de l’Italie, célèbre pour l’Etna. Je suis...", options: ["Sardaigne", "Crète", "Sicile", "Corse"], reponse: "Sicile" },
+  { question: "Je suis un pays européen célèbre pour le flamenco et la paella. Je suis...", options: ["Portugal", "Espagne", "Grèce", "Italie"], reponse: "Espagne" },
+  { question: "Je suis une ville allemande connue pour le mur qui me divisait. Je suis...", options: ["Munich", "Hambourg", "Berlin", "Cologne"], reponse: "Berlin" },
+  { question: "Le Colisée se trouve dans quelle ville ?", options: ["Florence", "Venise", "Naples", "Rome"], reponse: "Rome" },
+  { question: "Je suis un pays européen célèbre pour mes fjords et ma capitale Oslo. Je suis...", options: ["Suède", "Norvège", "Finlande", "Danemark"], reponse: "Norvège" },
+  { question: "L'Acropole est un monument emblématique situé à...", options: ["Istanbul", "Athènes", "Rome", "Lisbonne"], reponse: "Athènes" },
+  { question: "Je suis une île grecque célèbre pour mes maisons blanches et bleues. Je suis...", options: ["Crète", "Rhodes", "Mykonos", "Santorin"], reponse: "Santorin" },
 
   // 🌏 Asie
-  { question: "Je suis un pays asiatique connu pour le Mont Fuji et les sushis. Je suis...", options: ["Chine", "Corée", "Vietnam", "Japon"], reponse: "Japon" },
-  { question: "Le Taj Mahal se trouve dans quel pays ?", options: ["Pakistan", "Inde", "Bangladesh", "Sri Lanka"], reponse: "Inde" },
-  { question: "Je suis une ville futuriste des Émirats Arabes Unis, célèbre pour la tour Burj Khalifa. Je suis...", options: ["Abu Dhabi", "Doha", "Dubaï", "Mascate"], reponse: "Dubaï" },
-  { question: "Quel pays est surnommé « Le pays du matin calme » ?", options: ["Thaïlande", "Corée du Sud", "Japon", "Malaisie"], reponse: "Corée du Sud" },
-  { question: "Angkor Wat est un site historique situé au...", options: ["Vietnam", "Laos", "Cambodge", "Myanmar"], reponse: "Cambodge" },
-  { question: "Je suis un pays d’Asie célèbre pour ses plages et son pad thaï. Je suis...", options: ["Philippines", "Thaïlande", "Malaisie", "Indonésie"], reponse: "Thaïlande" },
+  { question: "Je suis un pays asiatique connu pour la Grande Muraille. Je suis...", options: ["Mongolie", "Chine", "Tibet", "Corée"], reponse: "Chine" },
+  { question: "Les temples d'Angkor se trouvent dans quel pays ?", options: ["Vietnam", "Cambodge", "Laos", "Myanmar"], reponse: "Cambodge" },
+  { question: "Je suis une cité-État asiatique célèbre pour mon lion et mes gratte-ciels. Je suis...", options: ["Hong Kong", "Singapour", "Macao", "Kuala Lumpur"], reponse: "Singapour" },
+  { question: "Quel pays est appelé « Le pays du sourire » ?", options: ["Vietnam", "Thaïlande", "Cambodge", "Laos"], reponse: "Thaïlande" },
+  { question: "Le temple Borobudur est un site historique situé en...", options: ["Malaisie", "Indonésie", "Brunei", "Philippines"], reponse: "Indonésie" },
+  { question: "Je suis un pays d'Asie célèbre pour mes cerisiers en fleurs et mes geishas. Je suis...", options: ["Corée du Sud", "Japon", "Taiwan", "Chine"], reponse: "Japon" },
 
   // 🌍 Afrique (surtout Algérie)
-  { question: "Je suis une ville algérienne surnommée la perle de l'ouest. Je suis...", options: ["Tlemcen", "Annaba", "Oran", "Sétif"], reponse: "Tlemcen" },
-  { question: "Quel monument historique célèbre peut-on visiter à Tipasa ?", options: ["Ruines romaines", "Fort turc", "Mosquée Ottomane", "Tombe phénicienne"], reponse: "Ruines romaines" },
-  { question: "Je suis une spécialité culinaire algérienne à base de semoule. Je suis...", options: ["Couscous", "Chakchouka", "Dolma", "Tajine"], reponse: "Couscous" },
-  { question: "Le désert du Sahara couvre une grande partie de quel pays ?", options: ["Tunisie", "Égypte", "Algérie", "Mali"], reponse: "Algérie" },
-  { question: "Je suis la capitale de l’Algérie. Je suis...", options: ["Alger", "Constantine", "Oran", "Batna"], reponse: "Alger" },
-  { question: "Je suis un pays africain célèbre pour les pyramides. Je suis...", options: ["Maroc", "Soudan", "Égypte", "Éthiopie"], reponse: "Égypte" },
+  { question: "Je suis une ville algérienne surnommée la ville des ponts. Je suis...", options: ["Alger", "Constantine", "Oran", "Annaba"], reponse: "Constantine" },
+  { question: "Quel site historique peut-on visiter dans les Aurès algériens ?", options: ["Djemila", "Timgad", "Gouraya", "Tassili"], reponse: "Timgad" },
+  { question: "Je suis une spécialité algérienne à base de pâte feuilletée et de miel. Je suis...", options: ["Baklawa", "Makroud", "Zlabia", "Charak"], reponse: "Baklawa" },
+  { question: "Les montagnes de l'Atlas traversent principalement quel pays du Maghreb ?", options: ["Tunisie", "Libye", "Maroc", "Algérie"], reponse: "Algérie" },
+  { question: "Je suis le port principal de l'Algérie sur la Méditerranée. Je suis...", options: ["Annaba", "Skikda", "Oran", "Alger"], reponse: "Alger" },
+  { question: "Je suis un pays africain célèbre pour le Sphinx et le Nil. Je suis...", options: ["Soudan", "Égypte", "Éthiopie", "Libye"], reponse: "Égypte" },
 
   // 🍛 Nourriture algérienne
-  { question: "Quel plat algérien est souvent servi lors des mariages et préparé avec des légumes, pois chiches et viande ?", options: ["Chorba", "Rechta", "Couscous", "Tajine"], reponse: "Couscous" },
-  { question: "Je suis une soupe traditionnelle consommée pendant le Ramadan. Je suis...", options: ["Harira", "Chorba", "Loubia", "Hrira"], reponse: "Chorba" },
-  { question: "Quel plat est typique de Constantine, fait de pâtes fines roulées à la main appelées \"trid\" ?", options: ["Rechta", "Mtewem", "Chakhchoukha", "Makroud"], reponse: "Chakhchoukha" },
+  { question: "Quel plat algérien est fait de galettes de pain trempées dans une sauce épicée ?", options: ["Chakchouka", "Rechta", "Chakhchoukha", "Doubara"], reponse: "Chakhchoukha" },
+  { question: "Je suis un plat algérien à base de haricots blancs en sauce. Je suis...", options: ["Foul", "Loubia", "Adas", "Jelbana"], reponse: "Loubia" },
+  { question: "Quel gâteau algérien est fait de semoule, dattes et miel ?", options: ["Makroud", "Baklawa", "Dziriettes", "Cornes de gazelle"], reponse: "Makroud" },
 
   // 🍰 Pâtisserie française
-  { question: "Je suis une pâtisserie française composée de coques colorées et d’une ganache au centre. Je suis...", options: ["Éclair", "Macaron", "Opéra", "Financier"], reponse: "Macaron" },
-  { question: "Je suis un dessert en forme de cylindre, garni de crème pâtissière, souvent parfumé au café ou au chocolat. Je suis...", options: ["Religieuse", "Éclair", "Paris-Brest", "Tartelette"], reponse: "Éclair" },
-  { question: "Quel gâteau en forme de couronne est garni de crème pralinée et nommé d’après une célèbre course cycliste ?", options: ["Saint-Honoré", "Paris-Brest", "Forêt-Noire", "Tropézienne"], reponse: "Paris-Brest" },
+  { question: "Je suis une pâtisserie française feuilletée en forme de palmier. Je suis...", options: ["Palmier", "Chausson", "Feuilleté", "Croissant"], reponse: "Palmier" },
+  { question: "Je suis un dessert français à base de crème brûlée au caramel sur le dessus. Je suis...", options: ["Flan", "Crème brûlée", "Île flottante", "Bavarois"], reponse: "Crème brûlée" },
+
 
   // 🍣 Plats japonais
-  { question: "Je suis un plat japonais à base de riz vinaigré et de poisson cru. Je suis...", options: ["Tempura", "Sushi", "Ramen", "Yakitori"], reponse: "Sushi" },
-  { question: "Quel plat japonais est une soupe à base de nouilles dans un bouillon ?", options: ["Ramen", "Soba", "Udon", "Miso"], reponse: "Ramen" },
-  { question: "Je suis un plat japonais composé de légumes ou fruits de mer frits dans une pâte légère. Je suis...", options: ["Katsu", "Tempura", "Onigiri", "Teriyaki"], reponse: "Tempura" },
+  { question: "Je suis un plat japonais de riz en boule enveloppé d'algue nori. Je suis...", options: ["Maki", "Onigiri", "Chirashi", "Inari"], reponse: "Onigiri" },
+  { question: "Quel plat japonais consiste en une omelette roulée sucrée ?", options: ["Tamagoyaki", "Okonomiyaki", "Takoyaki", "Oyakodon"], reponse: "Tamagoyaki" },
+  { question: "Je suis un plat japonais de nouilles sautées avec des légumes. Je suis...", options: ["Yakisoba", "Soba", "Udon", "Somen"], reponse: "Yakisoba" },
 
-{ 
-  question: "combien d'enfant aura t'on inchallah ❤️", 
-  options: ["2 Garçons👦", "❤️Deux fille 🥰", "1 une fille et 1 garçon", "2 fille 2 garçon "], 
-  reponse: "❤️Deux fille 🥰"
-}
+  // 🏥 Médical (nouveau thème)
+  { question: "Je suis l'organe qui pompe le sang dans tout le corps. Je suis...", options: ["Poumon", "Foie", "Cœur", "Rein"], reponse: "Cœur" },
+  { question: "Combien d'os compte le squelette d'un adulte ?", options: ["186", "206", "226", "246"], reponse: "206" },
+  { question: "Je suis la vitamine produite par la peau sous l'effet du soleil. Je suis la vitamine...", options: ["A", "B", "C", "D"], reponse: "D" },
+  { question: "Quel organe filtre le sang et produit l'urine ?", options: ["Foie", "Rate", "Rein", "Pancréas"], reponse: "Rein" }
 ];
 
 // Game State
