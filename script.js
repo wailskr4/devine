@@ -56,10 +56,18 @@ const devinettes = [
   { question: "Je suis un plat japonais de nouilles sautées avec des légumes. Je suis...", options: ["Yakisoba", "Soba", "Udon", "Somen"], reponse: "Yakisoba" },
 
   // 🏥 Médical (nouveau thème)
-  { question: "Je suis l'organe qui pompe le sang dans tout le corps. Je suis...", options: ["Poumon", "Foie", "Cœur", "Rein"], reponse: "Cœur" },
-  { question: "Combien d'os compte le squelette d'un adulte ?", options: ["186", "206", "226", "246"], reponse: "206" },
-  { question: "Je suis la vitamine produite par la peau sous l'effet du soleil. Je suis la vitamine...", options: ["A", "B", "C", "D"], reponse: "D" },
-  { question: "Quel organe filtre le sang et produit l'urine ?", options: ["Foie", "Rate", "Rein", "Pancréas"], reponse: "Rein" }
+{ question: "Je suis une machine utilisée pour voir l'intérieur du corps en coupes détaillées. Je suis...", options: ["Scanner", "IRM", "Échographie", "Rayons X"], reponse: "Scanner" },
+{ question: "Je suis une machine utilisée pour surveiller le rythme cardiaque. Je suis...", options: ["ECG", "Respirateur", "Défibrillateur", "Dialyseur"], reponse: "ECG" },
+{ question: "Je suis une machine qui aide les patients à respirer. Je suis...", options: ["Respirateur", "Scanner", "Moniteur", "Échographe"], reponse: "Respirateur" },
+
+  { question: "Je suis une hormone qui régule le taux de sucre dans le sang. Je suis...", options: ["Insuline", "Adrénaline", "Cortisol", "Oestrogène"], reponse: "Insuline" },
+{ question: "Je suis une hormone produite en cas de stress. Je suis...", options: ["Adrénaline", "Dopamine", "Cortisol", "Sérotonine"], reponse: "Cortisol" },
+{ question: "Je suis une hormone qui favorise le sommeil. Je suis...", options: ["Ocytocine", "Mélatonine", "Progestérone", "Insuline"], reponse: "Mélatonine" },
+
+  { question: "Je suis un sandwich populaire garni de viande, frites, sauce, dans une galette pliée. Je suis...", options: ["Panini", "Chawarma", "Tacos", "Hamburger"], reponse: "Tacos" },
+{ question: "Je suis un plat salé avec un cœur fondant souvent fait avec des œufs et du fromage. Je suis...", options: ["Soufflé", "Quiche", "Tortilla", "Omelette"], reponse: "Soufflé" },
+{ question: "Je suis une technique de cuisson au feu ou charbon, souvent utilisée pour les viandes. Je suis...", options: ["Friture", "Vapeur", "Grillade", "Sauté"], reponse: "Grillade" }
+  
 ];
 
 // Game State
